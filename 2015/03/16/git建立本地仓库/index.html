@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git建立本地仓库 | JMwill&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git建立本地仓库">
+<meta property="og:url" content="http://yoursite.com/blog/2015/03/16/git建立本地仓库/index.html">
+<meta property="og:site_name" content="JMwill's blog">
+<meta property="og:description" content="近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git建立本地仓库">
+<meta name="twitter:description" content="近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程">
+  
+    <link rel="alternative" href="/atom.xml" title="JMwill&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/11496449?v=3&amp;s=460">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">JMwill</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">如果每一个女的都注定有一个王子，那么我一定是斑马王子ㄟ(▔▽▔)ㄏ</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/JMwill" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1005053194410670/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/jia-ming-36-41" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/blog/787505998@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/blog/tags/Django/" style="font-size: NaNpx;">Django</a><a href="/blog/tags/Python/" style="font-size: NaNpx;">Python</a><a href="/blog/tags/git/" style="font-size: NaNpx;">git</a><a href="/blog/tags/javascript/" style="font-size: NaNpx;">javascript</a><a href="/blog/tags/python/" style="font-size: NaNpx;">python</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">如果每一个女的都注定有一个王子，那么我一定是斑马王子ㄟ(▔▽▔)ㄏ</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">JMwill</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/11496449?v=3&amp;s=460">
+				<hgroup>
+				  <h1 class="header-author">JMwill</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">如果每一个女的都注定有一个王子，那么我一定是斑马王子ㄟ(▔▽▔)ㄏ</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/JMwill" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1005053194410670/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/jia-ming-36-41" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/blog/787505998@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-git建立本地仓库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2015/03/16/git建立本地仓库/" class="article-date">
+  	<time datetime="2015-03-16T08:21:35.000Z" itemprop="datePublished">2015-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git建立本地仓库
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git/">git</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程</p>
+<a id="more"></a>
+<h2 id="建立本地裸仓库">建立本地裸仓库</h2><p>在本地建立一个裸仓库（抱歉，还不明白什么是裸仓库后续补上解释）。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#在本地建立一个空文件夹</span><br><span class="line">mkdir -<span class="tag">p</span> storage<span class="class">.git</span> #文件夹名字可以任取</span><br><span class="line">cd storage<span class="class">.git</span></span><br><span class="line">git init --bare #初始化裸仓库</span><br></pre></td></tr></table></figure>
+<p>这样就建立好了一个存储代码或者任意你喜欢的东西的仓库了。</p>
+<h2 id="建立代码仓库">建立代码仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir code_<span class="built_in">test</span> <span class="comment">#存放自己编写的代码的文件夹</span></span><br><span class="line"><span class="built_in">cd</span> code_<span class="built_in">test</span></span><br><span class="line">git init</span><br><span class="line">git <span class="built_in">clone</span> ~/your_path/storage.git</span><br></pre></td></tr></table></figure>
+<h2 id="链接本地存储仓库">链接本地存储仓库</h2><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#链接本地仓库，可以使用push origin master</span></span><br><span class="line">git remote <span class="keyword">add</span> origin ~/your_path/storage <span class="preprocessor"># origin可以使用其他你喜欢的名字</span></span><br></pre></td></tr></table></figure>
+<h2 id="测试&amp;脚本助手">测试&amp;脚本助手</h2><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#现在已经可以使用仓库来存储代码</span></span><br><span class="line"><span class="preprocessor">#首先创建一个测试文件</span></span><br><span class="line">vim testfile</span><br><span class="line"><span class="preprocessor">#输入你想写的</span></span><br><span class="line">git add .</span><br><span class="line">git push origin master</span><br><span class="line">看是否有错误产生</span><br></pre></td></tr></table></figure>
+<p>下面来编写一个自己的脚本来进行日常提交</p>
+<p><code>vim .push</code></p>
+<p>输入下面的代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> <span class="operator">-gt</span> <span class="number">0</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    mycommit=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> arg <span class="keyword">in</span> <span class="variable">$@</span></span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        mycommit=<span class="string">"<span class="variable">$mycommit</span> <span class="variable">$arg</span>"</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    mycommit=<span class="string">"auto commit"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">git commit -am <span class="string">"<span class="variable">$mycommit</span>"</span></span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>保存后就拥有了简单的shell脚本，能够辅助提交同时支持自带评论。（记得要提供执行权限<code>chmod +x .push</code>)</p>
+<h2 id="结语">结语</h2><p>这次实现了本地仓库存储代码，能够在断网的状态下也可以进行代码的版本控制，顺带熟悉了一遍git的使用。</p>
+
+        
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/03/16/《javascript语言精粹》记录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          《javascript语言精粹》记录
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="git建立本地仓库" data-title="git建立本地仓库" data-url="http://yoursite.com/blog/blog/2015/03/16/git建立本地仓库/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 JMwill
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/blog/js/mobile.js" type="text/javascript"></script>
+<script src="/blog/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
