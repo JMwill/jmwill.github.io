@@ -259,7 +259,7 @@
 <ol>
 <li>HTML最终由机器读取解析，或进行渲染，或挖掘出有用的信息为其他应用提供支持。</li>
 <li>HTML 语义 = 元素 + 属性 + 属性值 (+ 文档结构)</li>
-<li>全局属性<ul>
+<li>全局属性<ol>
 <li>id 属性, 标示符 (用于引用)，不应依赖其语义处理相应元素</li>
 <li>class 属性</li>
 <li>title 属性<ul>
@@ -271,12 +271,12 @@
 </ul>
 </li>
 <li>lang属性</li>
-</ul>
+</ol>
 </li>
-<li>元数据<ul>
+<li>元数据<ol>
 <li>head元素, 一组元数据</li>
 <li>title 元素, 文档对外的标题, 窗口标题 / 历史记录 / 搜索结果标题 / …</li>
-<li>meta元素<ul>
+<li>meta元素<ol>
 <li>name / http-equiv / charset</li>
 <li>name 属性决定种类，content 属性表示内容</li>
 <li>标准名称 (application-name, author, description, generator, keywords)</li>
@@ -287,11 +287,11 @@
 <li>360: renderer (未注册)</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-</ul>
+</ol>
 </li>
-<li>链接links<ul>
+<li>链接links<ol>
 <li>外部资源链接, 指向用来组成当前文档的外部资源，通常由 UA 自动处理</li>
 <li>超链接, 用来「导航」到其他资源 (可以在 UA 中打开, 下载, …)</li>
 <li>如：元素：link, a, area<ul>
@@ -307,9 +307,9 @@
 <li>rel=”nofollow”, 当前文档的作者并不推荐超链接指向的文档 (超链接标注), 由 Google 引入，他们认为适用场景有 (via)： 不可信赖的内容 付费链接 按优先级别进行抓取 (比如通知 Googlebot 不要抓取「注册」或「登陆」页面)</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>区块<ul>
+<li>区块<ol>
 <li>article 元素<ul>
 <li>独立的文档、页面、应用、站点 可以单独发布、重用 可以是… 一篇帖子 一篇文章 一则用户评论 一个可交互的 widget …</li>
 </ul>
@@ -339,9 +339,9 @@
 <li>代表与最近父级 article 或整个文档关联的联系人信息</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>分组内容<ul>
+<li>分组内容<ol>
 <li>p 元素<ul>
 <li>「段落」的显式表述 段落是主题接近的若干句子组成的文本块 (via)</li>
 <li>非优先考虑的选择 例如 address 的内容也是一个段落，但有更准确的语义</li>
@@ -397,9 +397,9 @@
 <li>对应于 ARIA role=”main” (定义)</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>文本级语义<ul>
+<li>文本级语义<ol>
 <li>em 元素<ul>
 <li>表示侧重点的强调</li>
 <li>强调级别由 em 的嵌套个数决定</li>
@@ -495,9 +495,9 @@
 <li>有更合适的元素时不应选择 span</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>更改记录<ul>
+<li>更改记录<ol>
 <li>ins, del 元素<ul>
 <li>表示对当前文档内容进行的增添与删改</li>
 <li>cite 属性指向对某个修改的说明文档的 URL</li>
@@ -505,9 +505,9 @@
 <li>用来记录文档的编辑历史</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>嵌入内容<ul>
+<li>嵌入内容<ol>
 <li>img 元素<ul>
 <li>src, alt 属性决定了图片的含义<ul>
 <li>有 src 且 alt 为空字符串，代表装饰用图</li>
@@ -540,9 +540,9 @@
 <li>kind 属性描述文本轨的类型 可用值包括 subtitles, captions, descriptions, chapters, metadata</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>表格数据<ul>
+<li>表格数据<ol>
 <li>table 元素<ul>
 <li>用来表示超过一维的数据</li>
 </ul>
@@ -567,9 +567,9 @@
 <li>th 的 scope 属性表示标题对应的数据范围</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>微格式 (Microformats)<ul>
+<li>微格式 (Microformats)<ol>
 <li>Microformats 是 HTML 的扩展，用来标注人物 / 组织 / 事件 / 地点 / 简历 / 菜谱 / … 很多格式已是业界的事实标准 (Microformats Wiki)</li>
 <li>Microformats 的基本思路<ul>
 <li>用 HTML 已有的元素 / 属性，配合对属性值语义的扩展 (主要针对 class 属性) 以及对文档结构的约定来增强 HTML 的语义表达能力。Microformats 的规范本质上就是对一系列常用类型数据 HTML 格式的约定。</li>
@@ -586,9 +586,9 @@
 <li>对 HTML rel 属性值的扩展定义 rel=”license”, rel=”tag”, rel=”enclosure”, … 部分已经进入 HTML5 草案</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
-<li>微数据 (HTML Microdata)，允许在现有的文档中嵌入一组项的名值对集合 (W3C 草案)<ul>
+<li>微数据 (HTML Microdata)，允许在现有的文档中嵌入一组项的名值对集合 (W3C 草案)<ol>
 <li>itemscope 属性<ul>
 <li>用来标注描述项的位置</li>
 </ul>
@@ -610,7 +610,7 @@
 <li>情况复杂，根据元素类型不同，取值方式各有不同 具体请参考 Microdata 规范草案 统一词汇表 请参考 Schema.org 搜索引擎 (Google, Bing, Yahoo!) 建立，爬虫支持并理解用此词汇表中词汇表达的语义</li>
 </ul>
 </li>
-</ul>
+</ol>
 </li>
 </ol>
 <p><a href="http://justineo.github.io/slideshows/semantic-html/#/" target="_blank" rel="external">原文链接</a></p>
