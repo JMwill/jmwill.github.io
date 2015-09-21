@@ -1,590 +1,729 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="theme-next use-motion ">
 <head>
-  <meta charset="utf-8">
   
-  <title>JMwill&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript and python blog">
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="╮(╯▽╰)╭" />
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="╮(╯▽╰)╭">
 <meta property="og:type" content="website">
-<meta property="og:title" content="JMwill's blog">
-<meta property="og:url" content="http://jmwill.github.io/index.html">
-<meta property="og:site_name" content="JMwill's blog">
-<meta property="og:description" content="javascript and python blog">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="╮(╯▽╰)╭">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JMwill's blog">
-<meta name="twitter:description" content="javascript and python blog">
-  
-    <link rel="alternative" href="/atom.xml" title="JMwill&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="╮(╯▽╰)╭">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Hexo </title>
 </head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			<img src="https://avatars2.githubusercontent.com/u/11496449?v=3&amp;s=460">
-		</a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">JMwill</a></h1>
-		</hgroup>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
 
-		
-		<p class="header-subtitle">如果每一个女的都注定有一个王子，那么我一定是斑马王子ㄟ(▔▽▔)ㄏ</p>
-		
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>关于我</li>
-						
-					</ul>
-				</div>
-			</div>
-		
 
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-							<li><a href="/tags/笔记">笔记</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/JMwill" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/p/1005053194410670/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
-					        
-								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/jia-ming-36-41" title="zhihu">zhihu</a>
-					        
-								<a class="mail" target="_blank" href="Mailto://787505998@qq.com" title="mail">mail</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Django/" style="font-size: 10px;">Django</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a><a href="/tags/Python/" style="font-size: 15px;">Python</a><a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/日常/" style="font-size: 10px;">日常</a><a href="/tags/笔记/" style="font-size: 20px;">笔记</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.lxjwlt.com/">lxj大大滴blog</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://code.linkqj.com/">lqj大大滴blog</a>
-			        
-			        </div>
-				</section>
-				
 
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">前端小生, 喜爱code， 就读于广东工业大学, Vtmer, 欢迎骚扰 \(￣▽￣)♂</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
+  <div class="container one-column 
+   page-home 
+">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Hexo</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
 </div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">JMwill</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img src="https://avatars2.githubusercontent.com/u/11496449?v=3&amp;s=460">
-				<hgroup>
-				  <h1 class="header-author">JMwill</h1>
-				</hgroup>
-			</div>
-			
-			<p class="header-subtitle">如果每一个女的都注定有一个王子，那么我一定是斑马王子ㄟ(▔▽▔)ㄏ</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/tags/笔记">笔记</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/JMwill" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/p/1005053194410670/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
-			        
-						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/jia-ming-36-41" title="zhihu">zhihu</a>
-			        
-						<a class="mail" target="_blank" href="Mailto://787505998@qq.com" title="mail">mail</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-15年4月疼训面试记录T-T" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/09/15年4月疼训面试记录T-T/" class="article-date">
-  	<time datetime="2015-04-09T05:09:05.000Z" itemprop="datePublished">2015-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+  <section id="posts" class="posts-expand">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/09/13/创建舒服的Ubuntu开发环境/" itemprop="url">
+                创建舒服的Ubuntu开发环境
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-09-13T15:40:26+08:00" content="2015-09-13">
+            2015-09-13
+          </time>
+        </span>
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/09/15年4月疼训面试记录T-T/">15年4月疼训（腾迅）面试记录T_T</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>昨天进行了人生的第一次大公司面试。面试过程中遇到了一些自己曾经了解过，但是忘记了的问题，现做记录如下：</p>
-<h2 id="面试记录">面试记录</h2><h3 id="雅虎14条优化原则">雅虎14条优化原则</h3><ol>
-<li>尽可能地减少HTTP的请求数                                     content</li>
-<li>使用CDN（Content Delivery Network，中文：内容分发网络)       server</li>
-<li>添加Expires头（或者Cache-control）                           server</li>
-<li>Gzip组件                                                     server</li>
-<li>将CSS样式放在页面上方                                        css</li>
-<li>将脚本移动到底部（包括内联的）                               javascript
-        <hr/>
-        <p class="article-more-link">
-          <a  href="/2015/04/09/15年4月疼训面试记录T-T/#more">more >></a>
-        </p>
-      
-    </div>
-    
-    <div class="article-info">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日常/">日常</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-ubuntu下搭建Hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/17/ubuntu下搭建Hexo博客/" class="article-date">
-  	<time datetime="2015-03-17T12:39:32.000Z" itemprop="datePublished">2015-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/17/ubuntu下搭建Hexo博客/">ubuntu下搭建Hexo博客</a>
-    </h1>
-  
+          
+        
+      </div>
+    </header>
 
-      </header>
+    <div class="post-body">
+
       
+      
+
+      
+        
+          <p>因为office的强大覆盖范围，我又无奈地投入到了windows的怀抱。但是之前使用Linux时手指在键盘上点击如飞的感觉实在是爽，于是，我又贱贱地装回了虚拟机来使用Ubuntu，不要问我为什么不装双系统 (ಥ _ ಥ)，谁叫我手贱买了个120G的固态硬盘，又不想加装个机械硬盘呢。没地方分啊_(:з」∠)_。好了，那装回了Ubuntu系统之后，当然是尽量配置一个自己喜欢的环境了。这里只是列出了我自己喜欢的环境，以作记录。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/13/创建舒服的Ubuntu开发环境/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-    <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="ubuntu上制作Hexo博客">ubuntu上制作Hexo博客</h2><p>现在这个国内氛围里，我们什么都要求最低成本，所以咯，我们现在就搭建个免费的博客来使用一下下吧！(￣▽￣)~*</p>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/17/ubuntu下搭建Hexo博客/" itemprop="url">
+                ubuntu下搭建Hexo博客
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-03-17T20:39:32+08:00" content="2015-03-17">
+            2015-03-17
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="ubuntu上制作Hexo博客">ubuntu上制作Hexo博客</h2><p>现在这个国内氛围里，我们什么都要求最低成本，所以咯，我们现在就搭建个免费的博客来使用一下下吧！(￣▽￣)~*</p>
 <p><a href="http://hexo.io/">hexo</a>是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github上。其作者是来自台湾的<strong>@tommy351</strong>。我们搭建<strong>hexo</strong>这个东东，是拿做博客的嘛，那想要找个地方来放我们写下的文章，应该要放到哪里呢，答案当然是大热的github上啦。所以我们需要先装上git和node.js。因此，我们又可以趁机来学一下node.js了。不多说，开工。<br>
-        <hr/>
-        <p class="article-more-link">
-          <a  href="/2015/03/17/ubuntu下搭建Hexo博客/#more">more >></a>
-        </p>
-      
-    </div>
-    
-    <div class="article-info">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Django学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/16/Django学习笔记/" class="article-date">
-  	<time datetime="2015-03-16T09:26:43.000Z" itemprop="datePublished">2015-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/17/ubuntu下搭建Hexo博客/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/16/Django学习笔记/">Django学习笔记</a>
-    </h1>
-  
+      
+    </div>
 
-      </header>
+    <footer class="post-footer">
       
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-    <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="初步接触记录1：">初步接触记录1：</h2><h4 id="建立一个项目：">建立一个项目：</h4><ul>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/16/Django学习笔记/" itemprop="url">
+                Django学习笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-03-16T17:26:43+08:00" content="2015-03-16">
+            2015-03-16
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="初步接触记录1：">初步接触记录1：</h2><h4 id="建立一个项目：">建立一个项目：</h4><ul>
 <li><p>在需要储存代码的目录内运行以下命令：<code>django-admin.py startproject your_porject_name</code>，会生成以下目录结构：
-        <hr/>
-        <p class="article-more-link">
-          <a  href="/2015/03/16/Django学习笔记/#more">more >></a>
-        </p>
-      
-    </div>
-    
-    <div class="article-info">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Python学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/16/Python学习笔记/" class="article-date">
-  	<time datetime="2015-03-16T09:16:27.000Z" itemprop="datePublished">2015-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/16/Django学习笔记/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/16/Python学习笔记/">Python学习笔记</a>
-    </h1>
-  
+      
+    </div>
 
-      </header>
+    <footer class="post-footer">
       
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-    <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="入门所学知识：">入门所学知识：</h2><ol>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/16/Python学习笔记/" itemprop="url">
+                Python学习笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-03-16T17:16:27+08:00" content="2015-03-16">
+            2015-03-16
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="入门所学知识：">入门所学知识：</h2><ol>
 <li>python中print的方法跟c语言的基本一样，同样可以使用<code>print &#39;output %s, something %s.&#39; %(temp1, temp2)</code></li>
-<li>raw字符串与多行字符串：<code>r&#39;...&#39;</code>免于对字符串==使用转义符==，但是无法表示多行字符，以及包含==’==和==“==的字符串， 可以使用r’’’…’’’来表示多行字符串</li>
-<li>unicode字符串：在字符串前加==u==字符，当出现中文编码错误的时候可以在文件第一行添加注释 <code># -*- coding: utf-8 -*-</code></li>
-<li>python中的与运算，或运算，非运算使用的分别时==and==， ==or==， ==not==关键字来实现
-        <hr/>
-        <p class="article-more-link">
-          <a  href="/2015/03/16/Python学习笔记/#more">more >></a>
-        </p>
-      
-    </div>
-    
-    <div class="article-info">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-《javascript语言精粹》记录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/16/《javascript语言精粹》记录/" class="article-date">
-  	<time datetime="2015-03-16T09:04:42.000Z" itemprop="datePublished">2015-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+<li>raw字符串与多行字符串：<code>r&#39;...&#39;</code>免于对字符串<strong>使用转义符</strong>，但是无法表示多行字符，以及包含<strong>’</strong>和<strong>“</strong>的字符串， 可以使用r’’’…’’’来表示多行字符串</li>
+<li>unicode字符串：在字符串前加<strong>u</strong>字符，当出现中文编码错误的时候可以在文件第一行添加注释 <code># -*- coding: utf-8 -*-</code></li>
+<li>python中的与运算，或运算，非运算使用的分别时<strong>and</strong>， <strong>or</strong>， <strong>not</strong>关键字来实现
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/16/Python学习笔记/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/16/《javascript语言精粹》记录/">《javascript语言精粹》记录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>javascript中存在着很多糟糕的特性：全局变量的轻易添加，无块级作用域，<strong>==</strong> 判断的不精确性等等，<br>但是它同时也具有许多精华的特性，对象字面量生成，函数字面量生成，使用原型继承的机制。</p>
-        <hr/>
-        <p class="article-more-link">
-          <a  href="/2015/03/16/《javascript语言精粹》记录/#more">more >></a>
-        </p>
       
     </div>
-    
-    <div class="article-info">
+
+    <footer class="post-footer">
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-	</div>
 
       
 
-      <div class="clearfix"></div>
-    </div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-  </div>
-  
-</article>
+      
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/16/《javascript语言精粹》记录/" itemprop="url">
+                《javascript语言精粹》记录
+              </a>
+            
+          
+        </h1>
+      
 
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-03-16T17:04:42+08:00" content="2015-03-16">
+            2015-03-16
+          </time>
+        </span>
 
-
-
-  
-    <article id="post-git建立本地仓库" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/16/git建立本地仓库/" class="article-date">
-  	<time datetime="2015-03-16T08:21:35.000Z" itemprop="datePublished">2015-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/16/git建立本地仓库/">git建立本地仓库</a>
-    </h1>
-  
 
-      </header>
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
       
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程</p>
-        <hr/>
-        <p class="article-more-link">
-          <a  href="/2015/03/16/git建立本地仓库/#more">more >></a>
-        </p>
+
+      
+        
+          <p>javascript中存在着很多糟糕的特性：全局变量的轻易添加，无块级作用域，<strong>==</strong> 判断的不精确性等等，<br>但是它同时也具有许多精华的特性，对象字面量生成，函数字面量生成，使用原型继承的机制。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/16/《javascript语言精粹》记录/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
       
     </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-    <div class="article-info">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-	</div>
-
       
 
-      <div class="clearfix"></div>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/16/git建立本地仓库/" itemprop="url">
+                git建立本地仓库
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-03-16T16:21:35+08:00" content="2015-03-16">
+            2015-03-16
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/16/git建立本地仓库/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
     </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
+  </section>
+
+  
+ </div>
+
+        
+
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
   </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/32269?v=3&s=460" alt="JMwill" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">JMwill</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">╮(╯▽╰)╭</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
   
-</article>
-
-
-
-
-
-
-  
-  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JMwill</span>
 </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2015 JMwill
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
   </div>
-</footer>
-    </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+    
+
+  
 
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
 
 
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
 
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-
-<! -- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
 
 
 
-  </div>
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
 </body>
 </html>
