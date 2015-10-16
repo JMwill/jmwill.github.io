@@ -47,7 +47,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/09/26/构建windows下的django开发环境/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="转回windows系统后，用于老师方面的项目还没有完结，因此需要在windows下进行django的开发。现在先记录一下windows下的环境搭建方法，留作记录，同时也给其他需要在windows下进行django开发的童鞋一些方便*´∀`)´∀`)*´∀`)*´∀`).">
-<meta property="og:updated_time" content="2015-09-30T10:44:57.726Z">
+<meta property="og:updated_time" content="2015-10-15T16:52:03.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构建windows下的django开发环境">
 <meta name="twitter:description" content="转回windows系统后，用于老师方面的项目还没有完结，因此需要在windows下进行django的开发。现在先记录一下windows下的环境搭建方法，留作记录，同时也给其他需要在windows下进行django开发的童鞋一些方便*´∀`)´∀`)*´∀`)*´∀`).">
@@ -211,6 +211,8 @@
 <h2 id="安装Django">安装Django</h2><p>到这里，终于要安装Django框架了。进入或者创建一个虚拟环境，然后运行虚拟环境。再在cmd中输入<code>pip install django</code>，安装完成后可以使用ipython进行检查，输入<code>import django;django.VERSION</code>，检查完毕后就可以开始创建一个django项目来玩玩了。</p>
 <p><code>python -m django-admin startproject [projectname]</code> -m参数是告诉python寻找django-admin模块，记得不要直接使用django-admin来创建新项目哦，输入后回车应该就可以在当前目录下创建一个django项目了。</p>
 <h2 id="安装MySQL">安装MySQL</h2><p>接下来进行MySQL<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">下载</a>以及安装，下载这里，可以选择下载一个完整的mysql，我这里硬盘肚量不够（┬＿┬），无奈只好下载一个server版本足够使用就算了。安装完成后记得检查是否将mysql添加到了path里面，打开cmd输入<code>mysql --version</code>，可以查看到mysql的版本，这样mysql server就安装完毕了。到这里，可以创建一个用于项目的用户，或者创建一个用于项目的数据库。</p>
+<p><code>----------------------------------我是分割线2015-10-14-----------------------</code></p>
+<p>这段时间需要在其他地方重新搭建一个django的运行环境，MySQL的安装的部分使用如果使用zip包的话还要自己配置路径、新增用户等的一些操作，过程比较麻烦，在这边还是推荐使用集成好的<a href="http://www.wampserver.com/en/" target="_blank" rel="external">wamp</a>来进行MySQL的安装，wamp中还有好用的PHPmyadmin和Apache、有时间还可以玩玩夹带的PHP。在这里需要注意的是，wamp下载可能需要用到梯子，如果发现点击下载链接没有反应，那就需要翻一下墙，而且wamp安装好之后默认root是没有密码的，如果只是测试的话，可以不设定，但最好还是设定一下密码。</p>
 <h2 id="安装MySQL-python">安装MySQL-python</h2><p>在<a href="http://www.codegood.com/archives/category/python" target="_blank" rel="external">这里</a>可以找到MySQL-python的下载链接，记得要看清对应的版本。下载完成之后不要立即启动安装程序，如果直接安装，安装到的地方是源python的安装目录下，这样python的虚拟环境是无法使用的。因此，我们需要先运行虚拟环境，然后使用easy_install来安装。在cmd内进入到软件的下载目录下输入<code>easy_install mysql-python-1.*.*...</code>，<em>…</em>指的是你的软件名称，或者你也可以使用绝对路径来安装<code>file://...</code>。</p>
 <p>到这里Django环境就基本安装好了，</p>
 <p><a href="http://www.swegler.com/becky/blog/2011/08/27/python-django-mysql-on-windows-7-part-i-getting-started/" target="_blank" rel="external">这里</a>是原文链接</p>
@@ -224,6 +226,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/16/HTTP协议学习/" rel="prev">HTTP协议学习</a>
             
           </div>
 
@@ -291,7 +295,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -305,7 +309,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
