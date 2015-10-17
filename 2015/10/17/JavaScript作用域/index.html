@@ -41,19 +41,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。
-什么是作用域？字面意思来看，作用域就是某样事物在一个或多个地方里面能够起作用。对于js而言，抛开最新版本的EcmaScript 6不说，EcmaScript 5以及之前的版本里面只有函数能产生域，同时没有块级作用域这个东东。对于作用域这个问题js权威指南的描述十分好理解：JavaScript中的函数运">
+<meta name="description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript作用域">
 <meta property="og:url" content="http://yoursite.com/2015/10/17/JavaScript作用域/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。
-什么是作用域？字面意思来看，作用域就是某样事物在一个或多个地方里面能够起作用。对于js而言，抛开最新版本的EcmaScript 6不说，EcmaScript 5以及之前的版本里面只有函数能产生域，同时没有块级作用域这个东东。对于作用域这个问题js权威指南的描述十分好理解：JavaScript中的函数运">
-<meta property="og:updated_time" content="2015-10-17T16:17:16.957Z">
+<meta property="og:description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。">
+<meta property="og:updated_time" content="2015-10-17T16:21:43.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript作用域">
-<meta name="twitter:description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。
-什么是作用域？字面意思来看，作用域就是某样事物在一个或多个地方里面能够起作用。对于js而言，抛开最新版本的EcmaScript 6不说，EcmaScript 5以及之前的版本里面只有函数能产生域，同时没有块级作用域这个东东。对于作用域这个问题js权威指南的描述十分好理解：JavaScript中的函数运">
+<meta name="twitter:description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -199,6 +196,7 @@
 
       
         <span itemprop="articleBody"><p>JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。</p>
+<a id="more"></a>
 <h2 id="什么是作用域？">什么是作用域？</h2><p>字面意思来看，作用域就是某样事物在一个或多个地方里面能够起作用。对于js而言，抛开最新版本的EcmaScript 6不说，EcmaScript 5以及之前的版本里面只有函数能产生域，同时没有块级作用域这个东东。对于作用域这个问题js权威指南的描述十分好理解：<code>JavaScript中的函数运行在它们被定义的作用域里,而不是它们被执行的作用域里</code>。</p>
 <h2 id="实例">实例</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">'global scope'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funOne</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    alert(scope);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funTwo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">'funTwo scope'</span>;</span><br><span class="line">    funOne();</span><br><span class="line">&#125;</span><br><span class="line">funTwo();</span><br></pre></td></tr></table></figure>
 <p>这段代码运行后会弹出<code>global scope</code>，为什么不是<code>fun2 scope</code>呢？明明我已经在fun2里面覆盖了scope的值了呀，</p>
