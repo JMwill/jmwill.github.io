@@ -1,0 +1,631 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="╮(╯▽╰)╭" />
+
+
+
+  <meta name="keywords" content="javascript,笔记," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="根据阮一峰大大所说JavaScript是一种基于对象的语言，但由于缺失了类这一个语法特性，JavaScript又不是一种面向对象编程的语言。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript面向对象编程">
+<meta property="og:url" content="http://yoursite.com/2015/11/02/javascript面向对象编程/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="根据阮一峰大大所说JavaScript是一种基于对象的语言，但由于缺失了类这一个语法特性，JavaScript又不是一种面向对象编程的语言。">
+<meta property="og:updated_time" content="2015-11-04T11:17:52.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript面向对象编程">
+<meta name="twitter:description" content="根据阮一峰大大所说JavaScript是一种基于对象的语言，但由于缺失了类这一个语法特性，JavaScript又不是一种面向对象编程的语言。">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> javascript面向对象编程 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Hexo</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              javascript面向对象编程
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-11-02T19:01:54+08:00" content="2015-11-02">
+            2015-11-02
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>根据<a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="external">阮一峰</a>大大所说JavaScript是一种基于对象的语言，但由于缺失了类这一个语法特性，JavaScript又不是一种面向对象编程的语言。</p>
+<a id="more"></a>
+<h2 id="对象">对象</h2><h3 id="生成对象的原始模式：">生成对象的原始模式：</h3><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="type">Obj</span> = &#123;</span><br><span class="line">    property: 'num <span class="keyword">or</span> <span class="type">string</span>',</span><br><span class="line">    <span class="keyword">method</span>: function() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的方法生成的对象是一个个的独立个体，相互之间除了都是由Object对象创建出来之外，没有其他任何关系。</p>
+<h3 id="构造函数模式：">构造函数模式：</h3><p>要实现从原型生成一个实例，可以通过JavaScript提供的构造函数。而所谓的构造函数也就是一个普通的函数，但是其内部使用了<strong>this</strong>这个变量，在通过<strong>new</strong>运算符进行实例生成的时候，this会动态地绑定到生成的对象上。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Obj</span><span class="params">(name, age)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objOne = <span class="keyword">new</span> Obj(<span class="string">'one'</span>, <span class="number">10</span>),</span><br><span class="line">    objTwo = <span class="keyword">new</span> Obj(<span class="string">'Two'</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>如上的对象生成方式就利用了JavaScript的构造函数，通过这种方式构造出来的实例对象会包含一个指向构造它们出来的对象（函数）的属性叫做：<strong>constructor</strong>，这种关系可以使用<strong>instanceof</strong>运算符来进行判断：<code>console.log(objOne instanceof Obj); // true</code></p>
+<p>通过构造函数可以很好地构造出对象，但是当构造函数中包含有很多的属性、方法时，这种方式进行构造就会极大地浪费内存，因为每一次创建出来的对象内部的所有东西都是独立的，没有进行重用。即使是相同的方法（函数），构造函数也会重新运行一次操作，进行申请资源，分配空间等然后分配给新的对象。</p>
+<h3 id="prototype">prototype</h3><p>因为构造函数无法解决重用的问题，因此，需要用一个额外助手：prototype。prototype属性是每一个构造函数中都存在的一个属性，它指向另外的一个对象可以称为<strong>prototype对象</strong>，这个对象中的所有属性和方法都会被构造函数构造出来的<strong>实例对象</strong>所继承。</p>
+<p>因为有了prototype对象，现在，可以将需要进行重用的属性或者方法等放到它里面：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Obj</span><span class="params">(name, age)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Obj.prototype.type = <span class="string">'Person'</span>;</span><br><span class="line">Obj.prototype.getName = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objOne = <span class="keyword">new</span> Obj(<span class="string">'one'</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>这样这些不变的方法以及属性就可以避免重复创建了。</p>
+<h3 id="prototype验证">prototype验证</h3><p>为了方便验证prototype或进行一些其他操作，JavaScript里提供了一些辅助方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// isPrototypeOf()方法，判断某个proptotype对象和某个实例之间的关系</span></span><br><span class="line"><span class="built_in">console</span>.log(Obj.prototype.isPrototypeOf(objOne)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// hasOwnProperty()方法，判断某一个属性是本地属性，还是继承自prototype对象的属性</span></span><br><span class="line"><span class="built_in">console</span>.log(objOne.hasOwnProperty(<span class="string">'name'</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(objOne.hasOwnProperty(<span class="string">'type'</span>)) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// in运算符，判断某个实例是否含有某个属性</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'age'</span> <span class="keyword">in</span> objOne); <span class="comment">// true;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'type'</span> <span class="keyword">in</span> objOne)</span><br></pre></td></tr></table></figure>
+<h2 id="构造函数的继承">构造函数的继承</h2><h3 id="绑定方式">绑定方式</h3><p>关于构造函数的继承，说白了就是要让实例对象能够找到需要继承的对象的属性以及方法。而在构造函数中，使用到了<strong>this</strong>这个对象，在JavaScript中，能够修改this指向的方法有apply和call，这样，一种继承的方式就有着落了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name, age, school</span>) </span>&#123;</span><br><span class="line">    Person.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> studentOne = <span class="keyword">new</span> Student(<span class="string">'xiaoming'</span>, <span class="number">10</span>, <span class="string">'Oxford'</span>);</span><br></pre></td></tr></table></figure>
+<p>这里已经实现了继承，然而这种实现需要记得参数的位置要保持一致，虽然可以在Student定义时不添加name，age这两个参数，但是为了不造成混淆，还是加上的好。</p>
+<h3 id="prototype方式">prototype方式</h3><p>prototype方式是通过将prototype设置为需要继承的对象的一个实例，通过这个实例来进行属性以及方法的查找。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name, age)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.type = <span class="string">"Person"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name, age, school)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student.prototype = <span class="keyword">new</span> Person();</span><br><span class="line">Student.prototype.constructor = Student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> studentOne = <span class="keyword">new</span> Student(<span class="string">'xiaoming'</span>, <span class="number">10</span>, <span class="string">'Oxford'</span>);</span><br></pre></td></tr></table></figure>
+<p>使用这种方式能够实现继承，但是明显有这其特有的限制，参数会被固定，或者只能继承固定的属性。同时，因为在外部重写了prototype属性，因此需要将新的prototype属性里面指向原构造函数的constructor重写成目标构造函数，在这里就是用Student覆盖掉Person，避免继承链的混乱。由于这里继承的是不变的属性，因此可以直接将属性写入到prototype中，然后通过指向prototype来实现继承。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">Person.prototype.type = <span class="string">"Person"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name, age, school)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student.prototype = Person.prototype;</span><br><span class="line">Student.prototype.constructor = Student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> studentOne = <span class="keyword">new</span> Student(<span class="string">'xiaoming'</span>, <span class="number">10</span>, <span class="string">'Oxford'</span>);</span><br></pre></td></tr></table></figure>
+<p>使用上面的方法实现继承，能够提高效率，但是当有需要对prototype（这里指Student的prototype对象）进行改写的时候，其继承的对象的prototype（这里指Person的prototype对象）的属性也会一并受影响。因此这种继承只适合继承永远不变的属性。</p>
+<h3 id="空对象跳板">空对象跳板</h3><p>由于直接继承prototype即使用被继承对象的prototype实现继承会出现间接修改的问题，而通过使用实例实现继承会出现浪费资源的问题。所以这里通过使用一个空对象来作为跳板，影响最小化。由于空对象的内存占用小，而且对其进行修改不会有什么问题，因此可以这样来实现继承：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">Person.prototype.type = <span class="string">'Person'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tempFun</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">tempFun.prototype = Person.prototype;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name, age, school)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student.prototype = <span class="keyword">new</span> tempFun();</span><br><span class="line">Student.prototype.constructor = Student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> studentOne = <span class="keyword">new</span> Student(<span class="string">'xiaoming'</span>, <span class="number">10</span>, <span class="string">'Oxford'</span>);</span><br></pre></td></tr></table></figure>
+<p>上面通过空对象而且使用prototype直接继承的方式，使得内存开销小。同时避免了prototype修改的副作用。</p>
+<p>另外一种空对象的实现方式可以通过为父类添加一个init方法，从而避免在构造函数内进行父类属性的初始化。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">Person.init = <span class="function"><span class="keyword">function</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">Student.prototype = <span class="keyword">new</span> Person;</span><br><span class="line">Student.prototype.constructor = Student;</span><br><span class="line"></span><br><span class="line">Student.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params">name, age, school</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Student;</span><br><span class="line">xiaoming.init(<span class="string">'xiaoming'</span>, <span class="number">10</span>, <span class="string">'Oxford'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(xiaoming.school)</span><br></pre></td></tr></table></figure>
+<p>在这里实现了父类的继承，无法使用父类的初始化方法，而且需要人手调用init方法。虽然可以通过一个变量标识是否在进行实例化从而在父类的构造函数内进行判断来调用init方法，不过这样会引入全局变量，不推荐使用。</p>
+<h3 id="万能拷贝">万能拷贝</h3><p>既然是继承，那么也就是要用到被继承的对象的资源，因此，通过变通的方法，使用拷贝来进行继承。把所有的对象都放到prototype上，然后通过遍历将属性都拷贝到要继承的对象上。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">Person.prototype.type = <span class="string">'Person'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name, age, school)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> Person.prototype) &#123;</span><br><span class="line">        Student.prototype[i] = Person.prototype[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> studentOne = <span class="keyword">new</span> Student(<span class="string">'xiaoming'</span>, <span class="number">10</span>, <span class="string">'Oxford'</span>);</span><br></pre></td></tr></table></figure>
+<p>当然，当对象的属性构成比较复杂的时候就需要通过深拷贝来实现精确拷贝，而非引用拷贝。这样才能够真正避免修改prototype的副作用。</p>
+<h2 id="非构造函数继承">非构造函数继承</h2><h3 id="修改子对象prototype">修改子对象prototype</h3><p>当我们拥有一些普通对象，而且想要实现对象间的继承的时候，因为普通对象没有构造能力，无法使用new，那么这时通过使用什么方法来达到继承的目的呢？通过使用prototype。对象进行属性查找的时候在自身上无法查找到的时候就会通过prototype来进行查找。因此可以通过prototype来实现继承。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> goodness</span> = &#123;</span><br><span class="line">    sympathetic: <span class="literal">true</span>,</span><br><span class="line">    helpful: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function <span class="keyword">object</span>(obj) &#123;</span><br><span class="line">    function <span class="function"><span class="title">fun</span><span class="params">()</span> &#123;&#125;;</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span>.prototype = obj;</span></span><br><span class="line">    <span class="keyword">return</span> new <span class="function"><span class="keyword">fun</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable"><span class="keyword">var</span> person</span> = <span class="keyword">object</span>(goodness);</span><br><span class="line"></span><br><span class="line">person.name = 'xiaoming';</span><br><span class="line">person.age = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>这一种方法，只不过是让被继承的对象变通地赋予构造的能力而已。</p>
+<h3 id="还是万能的拷贝">还是万能的拷贝</h3><p>既然对象没有构造能力，那么我们就人为的帮它实现继承。所以，这里可以使用拷贝的方法。而正如上面构造函数的最后一种继承方法一样，当对象属性不复杂时，可以使用浅拷贝。而当属性为另一个对象时，浅拷贝就只能拷贝引用了，所以，这里统一使用深拷贝。来进行继承实现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> goodness = &#123;</span><br><span class="line">    sympathetic: <span class="literal">true</span>,</span><br><span class="line">    helpful: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">beCopy, copyer</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> copyer = copyer || &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> beCopy) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> beCopy[i] === <span class="string">'object'</span>) &#123;</span><br><span class="line">            copyer[i] = (beCopy[i].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</span><br><span class="line">            deepCopy(beCopy[i], copyer[i]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            copyer[i] = beCopy[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> copyer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = deepCopy(goodness);</span><br><span class="line"></span><br><span class="line">person.name = <span class="string">'xiaoming'</span>;</span><br><span class="line">person.age = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>以上就是继承的一些方式，在进行面向对象编程的时候可以斟酌使用。</p>
+<p>参考资料：</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html</a></li>
+<li><a href="http://www.cnblogs.com/sanshi/archive/2009/07/08/1519036.html" target="_blank" rel="external">http://www.cnblogs.com/sanshi/archive/2009/07/08/1519036.html</a></li>
+<li><a href="http://segmentfault.com/a/1190000002440502" target="_blank" rel="external">http://segmentfault.com/a/1190000002440502</a></li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+            <a href="/tags/笔记/" rel="tag">#笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/02/javascript构造函数/" rel="prev">javascript构造函数</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/29/javascript闭包/" rel="next">javascript闭包</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/32269?v=3&s=460" alt="JMwill" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">JMwill</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">╮(╯▽╰)╭</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成对象的原始模式："><span class="nav-number">1.1.</span> <span class="nav-text">生成对象的原始模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数模式："><span class="nav-number">1.2.</span> <span class="nav-text">构造函数模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype"><span class="nav-number">1.3.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype验证"><span class="nav-number">1.4.</span> <span class="nav-text">prototype验证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数的继承"><span class="nav-number">2.</span> <span class="nav-text">构造函数的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定方式"><span class="nav-number">2.1.</span> <span class="nav-text">绑定方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype方式"><span class="nav-number">2.2.</span> <span class="nav-text">prototype方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空对象跳板"><span class="nav-number">2.3.</span> <span class="nav-text">空对象跳板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#万能拷贝"><span class="nav-number">2.4.</span> <span class="nav-text">万能拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非构造函数继承"><span class="nav-number">3.</span> <span class="nav-text">非构造函数继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改子对象prototype"><span class="nav-number">3.1.</span> <span class="nav-text">修改子对象prototype</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还是万能的拷贝"><span class="nav-number">3.2.</span> <span class="nav-text">还是万能的拷贝</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JMwill</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="theme-next use-motion ">
+<html class="theme-next use-motion theme-next-mist">
 <head>
   
 
@@ -47,7 +47,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/10/17/JavaScript作用域/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。">
-<meta property="og:updated_time" content="2015-10-17T16:21:43.797Z">
+<meta property="og:updated_time" content="2015-10-29T08:41:29.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript作用域">
 <meta name="twitter:description" content="JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。">
@@ -55,7 +55,7 @@
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
-    scheme: '',
+    scheme: 'Mist',
     sidebar: 'post'
   };
 </script>
@@ -210,7 +210,11 @@
 <h2 id="作用域链改变">作用域链改变</h2><p>js中作用域链一般情况下，在运行期上下文运行的过程中，其作用域链会被 with 语句和 catch 语句影响。with语句不推荐使用，因此直接不用就好，而对于catch语句，当发生错误而执行转跳到catch部分时，一个包含异常对象的可变对象会被置于作用域的头部，而函数的原作用域的其他部分将全部后延一位，这里会带来一些性能的损耗，一般不用去在意，如果真的十分重视性能，可以通过将错误处理委托给另一个函数来进行，</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    myErrorFun();</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    dealWithError(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面由于dealWithError方法是catch子句中唯一执行的代码。该函数接收异常对象作为参数，由于只执行一条语句，且没有局部变量的访问，作用域链的临时改变就不会影响代码性能。</p>
-<p>参考资料：<br><a href="http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html</a><br><a href="http://www.laruence.com/2009/05/28/863.html" target="_blank" rel="external">http://www.laruence.com/2009/05/28/863.html</a></p>
+<p>参考资料：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html</a></li>
+<li><a href="http://www.laruence.com/2009/05/28/863.html" target="_blank" rel="external">http://www.laruence.com/2009/05/28/863.html</a></li>
+</ul>
 </span>
       
     </div>
@@ -229,6 +233,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/28/javascript原型链/" rel="prev">javascript原型链</a>
             
           </div>
 
@@ -296,7 +302,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -310,7 +316,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
@@ -369,7 +375,7 @@
 <div class="theme-info">
   主題 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Mist
   </a>
 </div>
 
