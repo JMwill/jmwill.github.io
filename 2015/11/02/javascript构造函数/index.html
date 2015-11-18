@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="╮(╯▽╰)╭" />
+    <meta name="description" content="技术学习记录与分享" />
 
 
 
@@ -44,11 +44,11 @@
 <meta name="description" content="什么是构造函数？构造函数在JavaScript中也就是一个普通的函数，之所以能成为构造函数是因为需要使用其来进行对象的构造。而构造新对象的情况出现在使用new操作符调用构造函数的时候。在这里引用图片一张">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript构造函数">
-<meta property="og:url" content="http://yoursite.com/2015/11/02/javascript构造函数/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://jmwill.github.io/2015/11/02/javascript构造函数/index.html">
+<meta property="og:site_name" content="JMwill's Blog">
 <meta property="og:description" content="什么是构造函数？构造函数在JavaScript中也就是一个普通的函数，之所以能成为构造函数是因为需要使用其来进行对象的构造。而构造新对象的情况出现在使用new操作符调用构造函数的时候。在这里引用图片一张">
 <meta property="og:image" content="http://www.nowamagic.net/librarys/images/201203/2012_03_21_03.png">
-<meta property="og:updated_time" content="2015-11-04T11:21:42.003Z">
+<meta property="og:updated_time" content="2015-11-12T02:27:23.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript构造函数">
 <meta name="twitter:description" content="什么是构造函数？构造函数在JavaScript中也就是一个普通的函数，之所以能成为构造函数是因为需要使用其来进行对象的构造。而构造新对象的情况出现在使用new操作符调用构造函数的时候。在这里引用图片一张">
@@ -61,7 +61,7 @@
   };
 </script>
 
-  <title> javascript构造函数 | Hexo </title>
+  <title> javascript构造函数 | JMwill's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -89,7 +89,7 @@
       <span class="logo">
         <i class="icon-next-logo"></i>
       </span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">JMwill's Blog</span>
   </a>
   <span class="logo-line-after"><i></i></span>
 </h1>
@@ -201,7 +201,7 @@
 <p>由图片的关系可以看出每一个函数的内部都有一个<strong>prototype属性</strong>，这一个属性指向一个<strong>prototype对象</strong>，prototype对象内显式地包含了一个<strong>constructor属性</strong>指向函数，这样构成一个循环引用。</p>
 <p>那么问题来了，为什么需要这样的一个constructor属性呢？因为在JavaScript中，每一个对象都<strong>隐式地</strong>包含了一个<strong>__proto__</strong>属性，这一个属性用于指向<strong>构造函数的prototype对象</strong>，这样当对象查找自己内部属性无果时，可以通过原型链，也即prototype对象来进行查找引用。这就是JavaScript的原型继承，这个时候，通过原型链也就能够找到对象自身的创建者，即constructor属性指向的对象（构造函数）。</p>
 <p>所以看回图片可以看到<strong>b、c</strong>两个对象的<strong>__proto__</strong>都指向<strong>Foo</strong>的prototype对象，因为都是由Foo创建出来的，而<strong>Foo</strong>的<strong>__proto__</strong>指向<strong>function</strong>的prototype对象，显然这是由于Foo是由<strong>function对象</strong>创建出来的，最后要说一下的就是，所有的<strong>prototype对象</strong>的<strong>__proto__</strong>都是指向<strong>object对象</strong>，结果自然就是因为<strong>prototype对象</strong>是由object创建出来的。</p>
-<p>但是还是没有说明白为什么需要这一个constructor属性啊，对，如果我们根本不需要知道对象的创建者，那么constructor存在好像也没有什么必要，但是当我们使用<strong>instanceof</strong>运算符的时候，假设A是B创建出来的实例对象。即A instanceof B就是正确的，而内部的查找线路会是这样：先查看<code>A.\_\_proto\_\_</code>是否等于<code>B.prototype</code>，如果等于那么就返回true，如果错误那么就继续按照A的<strong>__proto__</strong>这条链来进行查找，而B则按照<strong>prototype</strong>这条链来进行查找，如果找到同一引用，也返回true，否则到最后结束，没有则返回false。</p>
+<p>但是还是没有说明白为什么需要这一个constructor属性啊，对，如果我们根本不需要知道对象的创建者，那么constructor存在好像也没有什么必要，但是当我们使用<strong>instanceof</strong>运算符的时候，假设A是B创建出来的实例对象。即A instanceof B就是正确的，而内部的查找线路会是这样：先查看<code>A.__proto__</code>是否等于<code>B.prototype</code>，如果等于那么就返回true，如果错误那么就继续按照A的<strong>__proto__</strong>这条链来进行查找，而B则按照<strong>prototype</strong>这条链来进行查找，如果找到同一引用，也返回true，否则到最后结束，没有则返回false。</p>
 <p>参考资料：</p>
 <ul>
 <li><a href="http://www.nowamagic.net/librarys/veda/detail/1642" target="_blank" rel="external">http://www.nowamagic.net/librarys/veda/detail/1642</a></li>
@@ -224,6 +224,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/17/复习正则表达式/" rel="prev">复习正则表达式</a>
             
           </div>
 
@@ -287,11 +289,11 @@
           <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/32269?v=3&s=460" alt="JMwill" itemprop="image"/>
           <p class="site-author-name" itemprop="name">JMwill</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">╮(╯▽╰)╭</p>
+        <p class="site-description motion-element" itemprop="description">技术学习记录与分享</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
