@@ -1,7 +1,16 @@
-# 个人hexo博客
+# GitHub 站点主页
 
-用于记录日常学习以及各种杂事，会慢慢丰富、优化。
+个人项目的展示
+
+用Hexo搭建的博客
 
 [博客地址][blog site]
 
+---
+
+个人wiki
+
+[JMwill's wiki][JMwill's wiki]
+
 [blog site]: 	http://jmwill.github.io/
+[JMwill's wiki]: https://github.com/JMwill/wiki
