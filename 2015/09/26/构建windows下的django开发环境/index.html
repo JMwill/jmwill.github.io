@@ -1,0 +1,641 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="转回windows系统后，用于老师方面的项目还没有完结，因此需要在windows下进行django的开发。现在先记录一下windows下的环境搭建方法，留作记录，同时也给其他需要在windows下进行django开发的童鞋一些方便*´∀`)´∀`)*´∀`)*´∀`).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建windows下的django开发环境">
+<meta property="og:url" content="http://jmwill.github.io/2015/09/26/构建windows下的django开发环境/index.html">
+<meta property="og:site_name" content="JMwill's Blog">
+<meta property="og:description" content="转回windows系统后，用于老师方面的项目还没有完结，因此需要在windows下进行django的开发。现在先记录一下windows下的环境搭建方法，留作记录，同时也给其他需要在windows下进行django开发的童鞋一些方便*´∀`)´∀`)*´∀`)*´∀`).">
+<meta property="og:updated_time" content="2016-06-12T18:54:34.084Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构建windows下的django开发环境">
+<meta name="twitter:description" content="转回windows系统后，用于老师方面的项目还没有完结，因此需要在windows下进行django的开发。现在先记录一下windows下的环境搭建方法，留作记录，同时也给其他需要在windows下进行django开发的童鞋一些方便*´∀`)´∀`)*´∀`)*´∀`).">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://jmwill.github.io/2015/09/26/构建windows下的django开发环境/"/>
+
+  <title> 构建windows下的django开发环境 | JMwill's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?0f3328de85db17dd42b09453edd782e0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JMwill's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                构建windows下的django开发环境
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-26T20:07:33+00:00" content="2015-09-26">
+              2015-09-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/26/构建windows下的django开发环境/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/26/构建windows下的django开发环境/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>转回windows系统后，用于老师方面的项目还没有完结，因此需要在windows下进行django的开发。现在先记录一下windows下的环境搭建方法，留作记录，同时也给其他需要在windows下进行django开发的童鞋一些方便*´∀`)´∀`)*´∀`)*´∀`).</p>
+<a id="more"></a>
+<hr>
+<h2 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h2><p>在这里我选择的是官方的最新版本，自带有pip，如果是python 2.7.9或者3.4.0以下的版本就需要自己进行pip的安装，具体方法看<a href="http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows" target="_blank" rel="external">这里</a>。python的<a href="https://www.python.org/downloads/" target="_blank" rel="external">官网</a>。安装python的时候记得需要进行path的添加，安装的时候有选项的，不过在最下面，需要拉一下滚动条。如果没有添加path的话就需要自己手动添加了，比较麻烦而已。</p>
+<h2 id="安装setuptools"><a href="#安装setuptools" class="headerlink" title="安装setuptools"></a>安装setuptools</h2><p>可能有的童鞋已经安装了python的其他没有pip的版本，因此需要用setuptools来进行pip的安装，同时使用setuptools还可以进行<strong>ipython</strong>的安装，这里的ipython最好使用setuptools来进行安装，这样可以将相应的附加内容也一并安装，而在pip上并不会安装附加内容（（<em>≥ｍ≤</em>）这个我只是在别人的安装记录上看到的，没有验证，有兴趣的童鞋可以试一下）。</p>
+<p>安装setuptools的方法是在<a href="https://pypi.python.org/pypi/setuptools#windows-simplified" target="_blank" rel="external">这里</a>下载安装脚本，然后运行，我这里具体是直接双击，因为python已经加入路径，所以脚本可以直接运行。到这里setuptools就已经安装完成了。到这里，没有pip的童鞋可以在<a href="https://pypi.python.org/pypi/setuptools#windows-simplified" target="_blank" rel="external">这里</a>进行pip的下载，下载完成后用<a href="http://www.7-zip.org/" target="_blank" rel="external">7-zip</a>进行解压（其他也可以喇），然后用cmd进入文件夹运行找到<strong>setup.py</strong>并运行它<code>python setup.py install</code>。到这里没有pip的童鞋也有pip可以用了。</p>
+<h2 id="安装ipython"><a href="#安装ipython" class="headerlink" title="安装ipython"></a>安装ipython</h2><p>在这里我推荐安装ipython，它比python自带shell模式好用很多，安装的方法在这里就很简单了直接在cmd上输入<code>easy_install ipython</code>，如果出错，有可能是原python的Scripts/路径没有添加，或者网络不稳定的原因，具体看出错信息，自行解决吧。</p>
+<h2 id="安装virtualenv"><a href="#安装virtualenv" class="headerlink" title="安装virtualenv"></a>安装virtualenv</h2><p>由于已经具有pip这一个工具，这里就可以使用pip来进行virtualenv的安装<code>pip install virtualenv</code>，等待安装完成后，创建一个文件夹用于存放virtualenv创建的虚拟环境，在cmd中进入到创建的文件夹，然后输入<code>virtualenv --no-site-packages [name you prefer]</code>。</p>
+<p>创建完成自己的虚拟环境之后就可以通过activate脚本来运行虚拟环境了。在我这里是<code>C:\Users\JMwill\virtualenvs_of_will\willenv\Scripts\activate</code>，输入后回车，就会看见C盘符的前面带着虚拟环境的名字了。之后使用pip安装的包都会安装在虚拟环境下。这样就不用担心原python环境被搞得一团糟了。</p>
+<p>如果想要退出虚拟环境，将<strong>activate</strong>换成<strong>deactivate</strong>回车就行。</p>
+<h2 id="让ipython支持env"><a href="#让ipython支持env" class="headerlink" title="让ipython支持env"></a>让ipython支持env</h2><p>按照安装的资料上说之前安装好的ipython默认是不会去查找env内的包的，这样在ipython中就无法引入相应的包。当然，你也可以在env内再一次安装ipython，但是这不是一个好的处理方法。所以，在这里需要对ipython进行一下小修改。但是，在我这里ipython并没有这种情况出现，但是，还是在这里将解决办法提供一下。</p>
+<p>在cmd中输入<code>ipython prefile create</code>，生成的文件名称应该是ipython_config.py。文件应该是存在ipython的profile文件夹内，windows中应该是[你的用户文件夹]\.ipython\profile_default这里。</p>
+<p>打开ipython_config.py文件的最后输入以下页面中的代码<a href="https://gist.github.com/bsweger/1176035" target="_blank" rel="external">这里</a>，参考<a href="http://blog.algarvio.me/2009/1/29/ipython-and-virtualenv/" target="_blank" rel="external">这里</a>，还有<a href="https://code.google.com/p/modwsgi/wiki/VirtualEnvironments" target="_blank" rel="external">这里</a>进行微调。到这里，再次启动ipython，注意输出信息是否有<code>VIRTUAL_ENV -&gt; c:\[你的虚拟环境路径]\Lib\site-packages</code>这样的信息。</p>
+<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><p>到这里，终于要安装Django框架了。进入或者创建一个虚拟环境，然后运行虚拟环境。再在cmd中输入<code>pip install django</code>，安装完成后可以使用ipython进行检查，输入<code>import django;django.VERSION</code>，检查完毕后就可以开始创建一个django项目来玩玩了。</p>
+<p><code>python -m django-admin startproject [projectname]</code> -m参数是告诉python寻找django-admin模块，记得不要直接使用django-admin来创建新项目哦，输入后回车应该就可以在当前目录下创建一个django项目了。</p>
+<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p>接下来进行MySQL<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">下载</a>以及安装，下载这里，可以选择下载一个完整的mysql，我这里硬盘肚量不够（┬＿┬），无奈只好下载一个server版本足够使用就算了。安装完成后记得检查是否将mysql添加到了path里面，打开cmd输入<code>mysql --version</code>，可以查看到mysql的版本，这样mysql server就安装完毕了。到这里，可以创建一个用于项目的用户，或者创建一个用于项目的数据库。</p>
+<p><code>----------------------------------我是分割线2015-10-14-----------------------</code></p>
+<p>这段时间需要在其他地方重新搭建一个django的运行环境，MySQL的安装的部分使用如果使用zip包的话还要自己配置路径、新增用户等的一些操作，过程比较麻烦，在这边还是推荐使用集成好的<a href="http://www.wampserver.com/en/" target="_blank" rel="external">wamp</a>来进行MySQL的安装，wamp中还有好用的PHPmyadmin和Apache、有时间还可以玩玩夹带的PHP。在这里需要注意的是，wamp下载可能需要用到梯子，如果发现点击下载链接没有反应，那就需要翻一下墙，而且wamp安装好之后默认root是没有密码的，如果只是测试的话，可以不设定，但最好还是设定一下密码。</p>
+<h2 id="安装MySQL-python"><a href="#安装MySQL-python" class="headerlink" title="安装MySQL-python"></a>安装MySQL-python</h2><p>在<a href="http://www.codegood.com/archives/category/python" target="_blank" rel="external">这里</a>可以找到MySQL-python的下载链接，记得要看清对应的版本。下载完成之后不要立即启动安装程序，如果直接安装，安装到的地方是源python的安装目录下，这样python的虚拟环境是无法使用的。因此，我们需要先运行虚拟环境，然后使用easy_install来安装。在cmd内进入到软件的下载目录下输入<code>easy_install mysql-python-1.*.*...</code>，<em>…</em>指的是你的软件名称，或者你也可以使用绝对路径来安装<code>file://...</code>。</p>
+<p>到这里Django环境就基本安装好了，</p>
+<p><a href="http://www.swegler.com/becky/blog/2011/08/27/python-django-mysql-on-windows-7-part-i-getting-started/" target="_blank" rel="external">这里</a>是原文链接</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/13/创建舒服的Ubuntu开发环境/" rel="next" title="创建舒服的Ubuntu开发环境">
+                <i class="fa fa-chevron-left"></i> 创建舒服的Ubuntu开发环境
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/16/HTTP协议学习/" rel="prev" title="HTTP协议学习">
+                HTTP协议学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/09/26/构建windows下的django开发环境/"
+           data-title="构建windows下的django开发环境" data-url="http://jmwill.github.io/2015/09/26/构建windows下的django开发环境/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="JMwill" />
+          <p class="site-author-name" itemprop="name">JMwill</p>
+          <p class="site-description motion-element" itemprop="description">前行的路途，风景无数</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/JMwill" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3194410670" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装python"><span class="nav-number">1.</span> <span class="nav-text">安装python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装setuptools"><span class="nav-number">2.</span> <span class="nav-text">安装setuptools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装ipython"><span class="nav-number">3.</span> <span class="nav-text">安装ipython</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装virtualenv"><span class="nav-number">4.</span> <span class="nav-text">安装virtualenv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#让ipython支持env"><span class="nav-number">5.</span> <span class="nav-text">让ipython支持env</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Django"><span class="nav-number">6.</span> <span class="nav-text">安装Django</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装MySQL"><span class="nav-number">7.</span> <span class="nav-text">安装MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装MySQL-python"><span class="nav-number">8.</span> <span class="nav-text">安装MySQL-python</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JMwill</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hexo-jmwill"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

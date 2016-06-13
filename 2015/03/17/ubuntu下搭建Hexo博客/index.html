@@ -1,0 +1,653 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Ubuntu,Hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="ubuntu上制作Hexo博客现在这个国内氛围里，我们什么都要求最低成本，所以咯，我们现在就搭建个免费的博客来使用一下下吧！(￣▽￣)~*
+hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github上。其作者是来自台湾的@tommy351。我们搭建hexo这个东东，是拿做博客的嘛，那想要找个地方来放我们写下的文章，应该要放到哪里呢，答案当然是大热的github上啦。所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu下搭建Hexo博客">
+<meta property="og:url" content="http://jmwill.github.io/2015/03/17/ubuntu下搭建Hexo博客/index.html">
+<meta property="og:site_name" content="JMwill's Blog">
+<meta property="og:description" content="ubuntu上制作Hexo博客现在这个国内氛围里，我们什么都要求最低成本，所以咯，我们现在就搭建个免费的博客来使用一下下吧！(￣▽￣)~*
+hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github上。其作者是来自台湾的@tommy351。我们搭建hexo这个东东，是拿做博客的嘛，那想要找个地方来放我们写下的文章，应该要放到哪里呢，答案当然是大热的github上啦。所">
+<meta property="og:updated_time" content="2016-06-12T18:54:34.084Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu下搭建Hexo博客">
+<meta name="twitter:description" content="ubuntu上制作Hexo博客现在这个国内氛围里，我们什么都要求最低成本，所以咯，我们现在就搭建个免费的博客来使用一下下吧！(￣▽￣)~*
+hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github上。其作者是来自台湾的@tommy351。我们搭建hexo这个东东，是拿做博客的嘛，那想要找个地方来放我们写下的文章，应该要放到哪里呢，答案当然是大热的github上啦。所">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://jmwill.github.io/2015/03/17/ubuntu下搭建Hexo博客/"/>
+
+  <title> ubuntu下搭建Hexo博客 | JMwill's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?0f3328de85db17dd42b09453edd782e0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JMwill's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ubuntu下搭建Hexo博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-17T20:39:32+00:00" content="2015-03-17">
+              2015-03-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/17/ubuntu下搭建Hexo博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/17/ubuntu下搭建Hexo博客/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="ubuntu上制作Hexo博客"><a href="#ubuntu上制作Hexo博客" class="headerlink" title="ubuntu上制作Hexo博客"></a>ubuntu上制作Hexo博客</h2><p>现在这个国内氛围里，我们什么都要求最低成本，所以咯，我们现在就搭建个免费的博客来使用一下下吧！(￣▽￣)~*</p>
+<p><a href="http://hexo.io/" target="_blank" rel="external">hexo</a>是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github上。其作者是来自台湾的<strong>@tommy351</strong>。我们搭建<strong>hexo</strong>这个东东，是拿做博客的嘛，那想要找个地方来放我们写下的文章，应该要放到哪里呢，答案当然是大热的github上啦。所以我们需要先装上git和node.js。因此，我们又可以趁机来学一下node.js了。不多说，开工。<br><a id="more"></a></p>
+<hr>
+<h2 id="1-Git安装"><a href="#1-Git安装" class="headerlink" title="1. Git安装"></a>1. Git安装</h2><p>ubuntu上安装git只需要执行下面的命令：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install git</span><br></pre></td></tr></table></figure></p>
+<p>为使用Github Page搭建博客, 我们需要在github上建立仓库,仓库名为<strong>Github用户.github.io</strong>，这样子我们才能通过<strong><a href="http://Github用户.github.io" target="_blank" rel="external">http://Github用户.github.io</a></strong>访问到自己的博客。（关于git与github的操作配置，请看官网<a href="https://github.com" target="_blank" rel="external">github官网</a></p>
+<h2 id="2-Node-js安装"><a href="#2-Node-js安装" class="headerlink" title="2. Node.js安装"></a>2. Node.js安装</h2><p>因为hexo官网推荐使用nvm来安装node.js，所以我们可以使用下面这条命令安装<strong>nvm</strong>：</p>
+<p><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code></p>
+<p>然后来安装node.js的包管理器<a href="http://npmjs.org/" target="_blank" rel="external">nvm</a>:</p>
+<p><code>$ nvm install 0.12 #目前官方最新版是0.12.X,按照实际情况修改</code></p>
+<p>安装完npm后，测试一下是否存在：</p>
+<p><code>$ npm -v</code></p>
+<h2 id="3-安装并初始化Hexo"><a href="#3-安装并初始化Hexo" class="headerlink" title="3. 安装并初始化Hexo"></a>3. 安装并初始化Hexo</h2><p>安装完node.js跟git后，使用npm安装将要使用的Hexo：</p>
+<p><code>$ npm install hexo -g</code></p>
+<p>当安装完Hexo后在自己本地创建一个目录，在目录内运行：</p>
+<p><code>$ hexo init</code></p>
+<p>运行：</p>
+<p><code>$ hexo server或者hexo s</code></p>
+<p>就可以在本地<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>上看到效果了</p>
+<p>接下来的操作可以自行官网学习（写文章时，如果不想博文在首页全部显示, 并能出现阅读全文按钮效果, 记得在你想在首页显示的部分下添加’&lt;!–more–&gt;’），下面说一说配置。</p>
+<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><p>当初始化完成hexo之后，需要修改目录下的<strong>_config.yml</strong>文件下的<strong>deploy</strong>项：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git</span><br><span class="line">    <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:github用户名/创建仓库.git.io.git #就是部署仓库的SSH,当然要记得上传ssh公钥到github啦。</span><br><span class="line">    <span class="attribute">branch</span>: master</span><br><span class="line">    <span class="attribute">message</span>: 随便写</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>教程初步完成，现在应该能够在github上看到自己的博客啦。ps：换个好看好玩的主题吧，慢慢玩！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/03/16/Django学习笔记/" rel="next" title="Django学习笔记">
+                <i class="fa fa-chevron-left"></i> Django学习笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/13/创建舒服的Ubuntu开发环境/" rel="prev" title="创建舒服的Ubuntu开发环境">
+                创建舒服的Ubuntu开发环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/03/17/ubuntu下搭建Hexo博客/"
+           data-title="ubuntu下搭建Hexo博客" data-url="http://jmwill.github.io/2015/03/17/ubuntu下搭建Hexo博客/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="JMwill" />
+          <p class="site-author-name" itemprop="name">JMwill</p>
+          <p class="site-description motion-element" itemprop="description">前行的路途，风景无数</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/JMwill" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3194410670" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu上制作Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">ubuntu上制作Hexo博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Git安装"><span class="nav-number">2.</span> <span class="nav-text">1. Git安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Node-js安装"><span class="nav-number">3.</span> <span class="nav-text">2. Node.js安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装并初始化Hexo"><span class="nav-number">4.</span> <span class="nav-text">3. 安装并初始化Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-config-yml"><span class="nav-number">5.</span> <span class="nav-text">配置_config.yml</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JMwill</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hexo-jmwill"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
