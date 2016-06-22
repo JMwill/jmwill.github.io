@@ -1,0 +1,29 @@
+{
+  "name": "jmwill.github.io",
+  "version": "0.0.0",
+  "description": "githug main page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMwill/jmwill.github.io.git"
+  },
+  "keywords": [
+    "github",
+    "main-page"
+  ],
+  "author": "JMwill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JMwill/jmwill.github.io/issues"
+  },
+  "homepage": "https://github.com/JMwill/jmwill.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0"
+  }
+}

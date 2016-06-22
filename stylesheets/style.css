@@ -1,0 +1,53 @@
+/* global */
+.main,
+.background,
+.container,
+.signature {
+  width: 100%;
+}
+
+/* Page Container */
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  color: white;
+  text-align: center;
+}
+.main .background {
+  height: 100%;
+  background-image: url(../images/default-bg.jpg);
+  background-size: cover;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.container:hover ul {
+  opacity: 1;
+}
+.container .work {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.container h1 {
+  font-weight: normal;
+}
+.container ul {
+  padding-left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.container a {
+  text-decoration: none;
+  color: #3890d0;
+}
+
+.signature {
+  position: absolute;
+  bottom: 0;
+}

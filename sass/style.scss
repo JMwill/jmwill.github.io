@@ -1,0 +1,54 @@
+/* global */
+$default-text-color: #FFFFFF;
+.main,
+.background,
+.container,
+.signature {
+    width: 100%
+}
+/* Page Container */
+.main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    color: $default-text-color;
+    text-align: center;
+    .background {
+        height: 100%;
+        background-image: url(../images/default-bg.jpg);
+        background-size: cover;
+    }
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &:hover ul {
+        opacity: 1;
+    }
+    .work {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0 5px;
+        background-color: rgba(255, 255, 255, .4);
+    }
+
+    h1 {
+        font-weight: normal;
+    }
+    ul {
+        padding-left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-out;
+    }
+    a {
+        text-decoration: none;
+        color: #3890d0;
+    }
+}
+
+.signature {
+    position: absolute;
+    bottom: 0;
+}
