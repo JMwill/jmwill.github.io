@@ -1,8 +1,14 @@
-var compass     = require('gulp-compass');
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
+const gulp        = require('gulp');
+const compass     = require('gulp-compass');
+const browserSync = require('browser-sync').create();
+const imagemin    = require('gulp-imagemin');
+const del         = require('del');
 
-gulp.task('browserSync', function () {
+const eslint      = require('gulp-eslint');
+const sourcemaps  = require('gulp-sourcemaps');
+const babel       = require('gulp-babel');
+
+gulp.task('browserSync', () => {
     browserSync.init({
         server: {
             baseDir: './'
@@ -10,24 +16,60 @@ gulp.task('browserSync', function () {
     });
 });
 
-gulp.task('compass', function () {
+gulp.task('compass', () => {
     gulp
-        .src('./sass/*.scss')
+        .src('./src/sass/*.scss')
         .pipe(compass({
             config_file: './config.rb',
-            css: 'stylesheets',
-            sass: 'sass'
+            css: './dist/stylesheets',
+            sass: './src/sass'
         }))
-        .pipe(gulp.dest('./stylesheets'))
+        .pipe(gulp.dest('./dist/stylesheets'))
         .pipe(browserSync.reload({
             stream: true
         }))
 });
 
-
-gulp.task('watch', ['browserSync', 'compass'], function () {
-    gulp.watch('./sass/*.scss', ['compass']);
-    gulp.watch('./*.html', browserSync.reload);
-    gulp.watch('./scripts/*.js', browserSync.reload);
-    gulp.watch('./stylesheets/*.css', browserSync.reload);
+gulp.task('imagemin', () => {
+    gulp.src('./src/images/*')
+        .pipe(imagemin({
+            optimizationLevel: 5, // 优化等级
+            progressive: true, // 无损压缩jpg图片
+            interlaced: true, // 隔行扫描gif进行渲染
+            multipass: true // 多次优化svg直到完全优化
+        }))
+        .pipe(gulp.dest('./dist/images/'));
 });
+
+gulp.task('babelIt', ['eslint'], () => {
+    return gulp.src('./src/scripts/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist/scripts/'));
+});
+
+gulp.task('eslint', () => {
+    return gulp.src('./src/**/*.js')
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
+gulp.task('clean:dist', () => {
+    return del(['./dist']);
+});
+
+gulp.task('watch', ['browserSync', 'compass', 'babelIt'], () => {
+    gulp.watch('./src/sass/*.scss', ['compass']);
+    gulp.watch('./src/scripts/**/*.js', ['babelIt']);
+    gulp.watch('./*.html', browserSync.reload);
+    gulp.watch('./dist/scripts/*.js', browserSync.reload);
+    gulp.watch('./dist/stylesheets/*.css', browserSync.reload);
+});
+
+gulp.task('serve', ['clean:dist', 'imagemin', 'watch']);
+
+gulp.task('dist', ['clean:dist', 'imagemin', 'compass']);

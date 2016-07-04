@@ -12,7 +12,9 @@ $default-text-color: #FFFFFF;
     top: 0;
     bottom: 0;
     color: $default-text-color;
+    background-color: #7cd8fb;
     text-align: center;
+    transition: background-color 1s ease-in;
     .background {
         height: 100%;
         background-image: url(../images/default-bg.jpg);
@@ -29,9 +31,9 @@ $default-text-color: #FFFFFF;
     }
     .work {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 10px 30px;
         margin: 0 5px;
-        background-color: rgba(255, 255, 255, .4);
+        background-color: rgba(255, 255, 255, .8);
     }
 
     h1 {
@@ -39,12 +41,12 @@ $default-text-color: #FFFFFF;
     }
     ul {
         padding-left: 0;
-        opacity: 0;
-        transition: opacity 1s ease-out;
+        opacity: .2;
+        transition: opacity 1s ease-in;
     }
     a {
         text-decoration: none;
-        color: #3890d0;
+        color: #000;
     }
 }
 
