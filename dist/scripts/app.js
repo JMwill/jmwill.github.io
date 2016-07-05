@@ -1,3 +1,18 @@
+"use strict";
+
+/*eslint-env es6*/
+/**
+ * utils
+ */
+if (!$) {
+    var $ = function $(elem) {
+        return document.querySelector(elem);
+    };
+
+    var $$ = function $$(elem) {
+        return document.querySelectorAll(elem);
+    };
+}
 'use strict';
 
 /*eslint-env es6*/
@@ -76,3 +91,66 @@
 
     hook.BgChanger = BgChanger;
 })(Page);
+'use strict';
+
+/*eslint-env es6*/
+;(function (hook) {
+    function loadedImg(evt) {
+        var prop = this.prop;
+
+        prop.elem.style.backgroundImage = 'url(' + prop.imgContainer.src + ')';
+    }
+
+    function BgImageLoader(elem) {
+
+        if (!elem) {
+            throw new Error('Image Loader Running Wrong!, elem: ' + elem);
+        }
+        elem = $(elem);
+
+        /**********************************
+         * property
+         **********************************/
+        this.prop = {
+            elem: elem,
+            imgContainer: new Image()
+        };
+
+        this.DEFAULT = {
+            timeout: 10000
+        };
+        /**********************************/
+
+        this.prop.imgContainer.addEventListener('load', loadedImg.bind(this));
+    }
+
+    BgImageLoader.prototype.loadImg = function (url) {
+        var prop = this.prop;
+        prop.imgContainer.src = url;
+    };
+
+    hook.BgImageLoader = BgImageLoader;
+})(Page);
+'use strict';
+
+/*eslint-env es6*/
+Page.init = function () {
+    document.onreadystatechange = function () {
+        // create colorful background
+        if (document.readyState === 'complete') {
+            Page.bg = new Page.BgChanger();
+            Page.bg.animateBg();
+        }
+
+        // create image loader
+
+        var imgUrls = ['/dist/images/default-bg.jpg'];
+        Page.imgLoader = new Page.BgImageLoader('.background');
+
+        setInterval(function () {
+            Page.imgLoader.loadImg(imgUrls[parseInt(Math.random() * imgUrls.length)]);
+        }, Page.imgLoader.DEFAULT.timeout);
+    };
+};
+
+Page.init();

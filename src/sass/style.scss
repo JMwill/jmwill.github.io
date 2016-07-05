@@ -1,3 +1,10 @@
+/* mixin */
+@mixin full-area {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
 /* global */
 $default-text-color: #FFFFFF;
 .main,
@@ -8,17 +15,13 @@ $default-text-color: #FFFFFF;
 }
 /* Page Container */
 .main {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    @include full-area;
     color: $default-text-color;
-    background-color: #7cd8fb;
     text-align: center;
-    transition: background-color 1s ease-in;
     .background {
         height: 100%;
-        background-image: url(../images/default-bg.jpg);
         background-size: cover;
+        transition: background-image 1s ease-in;
     }
 }
 
@@ -53,4 +56,13 @@ $default-text-color: #FFFFFF;
 .signature {
     position: absolute;
     bottom: 0;
+}
+
+
+/* Plugin of full colorful background */
+.full-colorful-bg {
+    @include full-area;
+    transition: background-color 1s ease-in;
+    z-index: -10;
+    background-color: #7cd8fb;
 }

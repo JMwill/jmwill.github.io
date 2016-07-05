@@ -1,3 +1,4 @@
+/* mixin */
 /* global */
 .main,
 .background,
@@ -8,18 +9,17 @@
 
 /* Page Container */
 .main {
+  width: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
   color: white;
-  background-color: #7cd8fb;
   text-align: center;
-  transition: background-color 1s ease-in;
 }
 .main .background {
   height: 100%;
-  background-image: url(../images/default-bg.jpg);
   background-size: cover;
+  transition: background-image 1s ease-in;
 }
 
 .container {
@@ -52,4 +52,15 @@
 .signature {
   position: absolute;
   bottom: 0;
+}
+
+/* Plugin of full colorful background */
+.full-colorful-bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: background-color 1s ease-in;
+  z-index: -10;
+  background-color: #7cd8fb;
 }

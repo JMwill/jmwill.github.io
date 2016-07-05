@@ -1,17 +1,8 @@
 /*eslint-env es6*/
-/**
- * utils
- */
-let $ = (elem) => {
-    return document.querySelector(elem);
-};
+;(function (hook) {
+    let dom = `<div class="full-colorful-bg" style=""></div>`;
 
-let $$ = (elem) => {
-    return document.querySelectorAll(elem);
-};
-
-;(function () {
-    function createRandomSexColor() {
+    function _createRandomSexColor() {
         /**
          * create one primary color between 7c ~ fb
          */
@@ -24,17 +15,64 @@ let $$ = (elem) => {
             result += colors.splice(index, 1);
         }
 
-        console.log(result);
         return result;
     }
 
-    let BgChanger = () => {
-        let main = $('.main');
+    function BgChanger(elem = document.body) {
+        if (typeof elem == 'string') {
+            try {
+                elem = $(elem);
+            } catch (e) {
+                elem = document.body;
+                console.error(`select element with an error: $(e.stack)`);
+            }
+        }
 
-        setInterval(() => {
-            main.style.backgroundColor = createRandomSexColor();
+        // create background element
+        let tempNode = document.createElement('div');
+        tempNode.innerHTML = dom;
+
+        /**********************************
+         * property
+         **********************************/
+        this.prop = {
+            elem: elem,
+            node: tempNode.childNodes[0]
+        };
+
+        this.DEFAULT = {
+            color: '#7cd8fb'
+        };
+
+        /**********************************/
+
+        // append background element to elem
+        this.prop.elem.appendChild(
+            this.prop.node
+        );
+    }
+
+    BgChanger.prototype.animateBg = function () {
+        let prop = this.prop;
+        if (prop.colorfulBg)
+            this.stopColorful();
+
+        prop.colorfulBg = setInterval(() => {
+            prop.node.style.backgroundColor = _createRandomSexColor();
         }, 2000);
     };
 
-    window.onload = BgChanger;
-})();
+    BgChanger.prototype.stopColorful = function () {
+        clentInterval(this.prop.colorfulBg);
+    };
+
+    BgChanger.prototype.setColor = function (color) {
+        let prop = this.prop;
+        if (!color)
+            color = this.DEFAULT.color;
+
+        this.node.style.backgroundColor = color;
+    };
+
+    hook.BgChanger = BgChanger;
+})(Page);
