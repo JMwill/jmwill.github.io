@@ -2,7 +2,7 @@
 
 /*eslint-env es6*/
 ;(function (hook) {
-    var dom = '<div class="full-colorful-bg" style=""></div>';
+    var dom = '<div class="full-colorful-bg"\n        style="position: absolute;\n        width: 100%;\n        top: 0;\n        bottom: 0;\n        transition: background-color 1s ease-in;\n        z-index: -10;\n        background-color: #7cd8fb;\n        background-size: cover;">\n    </div>';
 
     function _createRandomSexColor() {
         /**
@@ -20,28 +20,32 @@
         return result;
     }
 
-    function BgChanger() {
-        var elem = arguments.length <= 0 || arguments[0] === undefined ? document.body : arguments[0];
-
+    function BgChanger(elem) {
         if (typeof elem == 'string') {
             try {
                 elem = $(elem);
             } catch (e) {
-                elem = document.body;
-                console.error('select element with an error: $(e.stack)');
+                // create background element
+                var tempNode = document.createElement('div');
+                tempNode.innerHTML = dom;
+
+                elem = tempNode.childNodes[0];
+
+                // append background element to body
+                document.body.appendChild(elem);
+                console.error('select element with an error: $(e.stack), so background element will be ' + dom);
             }
         }
 
-        // create background element
-        var tempNode = document.createElement('div');
-        tempNode.innerHTML = dom;
+        if (!utils.isElement(elem)) {
+            throw new Error('Error element selector or input object is not an Element!');
+        }
 
         /**********************************
          * property
          **********************************/
         this.prop = {
-            elem: elem,
-            node: tempNode.childNodes[0]
+            elem: elem
         };
 
         this.DEFAULT = {
@@ -49,9 +53,6 @@
         };
 
         /**********************************/
-
-        // append background element to elem
-        this.prop.elem.appendChild(this.prop.node);
     }
 
     BgChanger.prototype.animateBg = function () {
@@ -59,20 +60,21 @@
         if (prop.colorfulBg) this.stopColorful();
 
         prop.colorfulBg = setInterval(function () {
-            prop.node.style.backgroundColor = _createRandomSexColor();
+            prop.elem.style.backgroundColor = _createRandomSexColor();
         }, 2000);
     };
 
     BgChanger.prototype.stopColorful = function () {
-        clentInterval(this.prop.colorfulBg);
+        clearInterval(this.prop.colorfulBg);
     };
 
     BgChanger.prototype.setColor = function (color) {
         var prop = this.prop;
         if (!color) color = this.DEFAULT.color;
 
-        this.node.style.backgroundColor = color;
+        this.style.backgroundColor = color;
     };
 
     hook.BgChanger = BgChanger;
 })(Page);
+//# sourceMappingURL=bg.js.map

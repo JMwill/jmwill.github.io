@@ -1,6 +1,16 @@
 /*eslint-env es6*/
 ;(function (hook) {
-    let dom = `<div class="full-colorful-bg" style=""></div>`;
+    let dom =
+    `<div class="full-colorful-bg"
+        style="position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        transition: background-color 1s ease-in;
+        z-index: -10;
+        background-color: #7cd8fb;
+        background-size: cover;">
+    </div>`;
 
     function _createRandomSexColor() {
         /**
@@ -18,26 +28,34 @@
         return result;
     }
 
-    function BgChanger(elem = document.body) {
+    function BgChanger(elem) {
         if (typeof elem == 'string') {
             try {
                 elem = $(elem);
             } catch (e) {
-                elem = document.body;
-                console.error(`select element with an error: $(e.stack)`);
+                // create background element
+                let tempNode = document.createElement('div');
+                tempNode.innerHTML = dom;
+
+                elem = tempNode.childNodes[0];
+
+                // append background element to body
+                document.body.appendChild(
+                    elem
+                );
+                console.error(`select element with an error: $(e.stack), so background element will be ${dom}`);
             }
         }
 
-        // create background element
-        let tempNode = document.createElement('div');
-        tempNode.innerHTML = dom;
+        if (!utils.isElement(elem)) {
+            throw new Error('Error element selector or input object is not an Element!');
+        }
 
         /**********************************
          * property
          **********************************/
         this.prop = {
-            elem: elem,
-            node: tempNode.childNodes[0]
+            elem: elem
         };
 
         this.DEFAULT = {
@@ -46,10 +64,6 @@
 
         /**********************************/
 
-        // append background element to elem
-        this.prop.elem.appendChild(
-            this.prop.node
-        );
     }
 
     BgChanger.prototype.animateBg = function () {
@@ -58,12 +72,12 @@
             this.stopColorful();
 
         prop.colorfulBg = setInterval(() => {
-            prop.node.style.backgroundColor = _createRandomSexColor();
+            prop.elem.style.backgroundColor = _createRandomSexColor();
         }, 2000);
     };
 
     BgChanger.prototype.stopColorful = function () {
-        clentInterval(this.prop.colorfulBg);
+        clearInterval(this.prop.colorfulBg);
     };
 
     BgChanger.prototype.setColor = function (color) {
@@ -71,7 +85,7 @@
         if (!color)
             color = this.DEFAULT.color;
 
-        this.node.style.backgroundColor = color;
+        this.style.backgroundColor = color;
     };
 
     hook.BgChanger = BgChanger;

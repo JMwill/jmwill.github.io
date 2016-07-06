@@ -9,17 +9,12 @@
 
 /* Page Container */
 .main {
-  width: 100%;
   position: absolute;
+  width: 100%;
   top: 0;
   bottom: 0;
   color: white;
   text-align: center;
-}
-.main .background {
-  height: 100%;
-  background-size: cover;
-  transition: background-image 1s ease-in;
 }
 
 .container {
@@ -56,11 +51,12 @@
 
 /* Plugin of full colorful background */
 .full-colorful-bg {
-  width: 100%;
   position: absolute;
+  width: 100%;
   top: 0;
   bottom: 0;
   transition: background-color 1s ease-in;
   z-index: -10;
   background-color: #7cd8fb;
+  background-size: cover;
 }

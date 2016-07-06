@@ -1,7 +1,7 @@
 /* mixin */
 @mixin full-area {
-    width: 100%;
     position: absolute;
+    width: 100%;
     top: 0;
     bottom: 0;
 }
@@ -18,11 +18,6 @@ $default-text-color: #FFFFFF;
     @include full-area;
     color: $default-text-color;
     text-align: center;
-    .background {
-        height: 100%;
-        background-size: cover;
-        transition: background-image 1s ease-in;
-    }
 }
 
 .container {
@@ -65,4 +60,5 @@ $default-text-color: #FFFFFF;
     transition: background-color 1s ease-in;
     z-index: -10;
     background-color: #7cd8fb;
+    background-size: cover;
 }

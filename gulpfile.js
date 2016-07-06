@@ -49,24 +49,12 @@ gulp.task('babelIt', ['eslint'], () => {
         .pipe(babel({
             presets: ['es2015']
         }))
-        // .pipe(sourcemaps.write('.'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist/scripts/'))
         .pipe(browserSync.reload({
             stream: true
         }));
 });
-
-gulp.task('genDistAppJs', ['babelIt'], () => {
-    return gulp.src([
-        './dist/scripts/utils.js',
-        './dist/scripts/bg.js',
-        './dist/scripts/loadImage.js',
-        './dist/scripts/index.js'
-    ])
-    .pipe(concat('app.js'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/scripts/'));
-})
 
 gulp.task('eslint', () => {
     return gulp.src('./src/**/*.js')
@@ -79,9 +67,9 @@ gulp.task('clean:dist', () => {
     return del(['./dist']);
 });
 
-gulp.task('watch', ['browserSync', 'compass', 'genDistAppJs'], () => {
+gulp.task('watch', ['browserSync', 'compass', 'babelIt'], () => {
     gulp.watch('./src/sass/*.scss', ['compass']);
-    gulp.watch('./src/scripts/**/*.js', ['genDistAppJs']);
+    gulp.watch('./src/scripts/**/*.js', ['babelIt']);
     gulp.watch('./*.html', browserSync.reload);
     gulp.watch('./dist/scripts/*.js', browserSync.reload);
     gulp.watch('./dist/stylesheets/*.css', browserSync.reload);
