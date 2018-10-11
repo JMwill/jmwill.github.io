@@ -1,6 +1,6 @@
 {
   "name": "jmwill.github.io",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "githug main page",
   "scripts": {
     "clean": "rimraf dist && rimraf index.html",
