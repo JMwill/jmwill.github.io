@@ -2,11 +2,13 @@
   "name": "jmwill.github.io",
   "version": "0.0.0",
   "description": "githug main page",
-  "main": "index.js",
   "scripts": {
+    "clean": "rimraf dist && rimraf index.html",
+    "lint": "eslint --fix src/",
+    "format": "prettier --write \"src/**/*.?(js|css)\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp watch",
-    "dist": "gulp dist"
+    "start": "yarn run clean && webpack-dev-server --env development --open",
+    "build": "yarn run clean && yarn run format && yarn lint && webpack --env production"
   },
   "repository": {
     "type": "git",
@@ -23,15 +25,31 @@
   },
   "homepage": "https://github.com/JMwill/jmwill.github.io#readme",
   "devDependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "browser-sync": "^2.13.0",
-    "del": "^2.2.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-compass": "^2.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-eslint": "^3.0.0",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-sourcemaps": "^1.6.0"
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }
