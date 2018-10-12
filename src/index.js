@@ -6,9 +6,12 @@ import Cube from './components/cube'
 
 const W = window.innerWidth
 const H = window.innerHeight
+const CUBE_COUNT = 5
 const genCubeConfig = existCubeConfig => {
+  const maxSize = (Math.max(W, H) / CUBE_COUNT) * 0.7
+  const minSize = (Math.min(W, H) / CUBE_COUNT) * 0.7
   const config = {
-    size: utils.randomInt(100, 200),
+    size: utils.randomInt(minSize, maxSize),
     animate: true,
     colorful: true,
     clickable: true,
@@ -26,7 +29,7 @@ const genCubeConfig = existCubeConfig => {
   return config
 }
 
-function getCubeList(num = 5) {
+function getCubeList(num = CUBE_COUNT) {
   const cubeConfigList = []
   let i
   for (i = 0; i < num; i++) {
