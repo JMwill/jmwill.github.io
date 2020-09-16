@@ -4,7 +4,7 @@
   "description": "githug main page",
   "scripts": {
     "clean": "rimraf dist",
-    "prestart": "npm run clean",
+    "format": "prettier --write src",
     "rollup:watch": "rollup -w --config",
     "start": "http-server",
     "prebuild": "npm run clean",
