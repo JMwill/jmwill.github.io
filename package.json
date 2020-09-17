@@ -3,12 +3,12 @@
   "version": "0.0.2",
   "description": "githug main page",
   "scripts": {
-    "clean": "rimraf dist && rimraf index.html",
-    "lint": "eslint --fix src/",
-    "format": "prettier --write \"src/**/*.?(js|css)\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run clean && webpack-dev-server --env development --open",
-    "build": "npm run clean && npm run format && npm run lint && webpack --env production"
+    "clean": "rimraf dist",
+    "prestart": "npm run clean",
+    "rollup:watch": "rollup -w --config",
+    "start": "http-server",
+    "prebuild": "npm run clean",
+    "build": "MY_BUILD_ENV=prod rollup --config"
   },
   "repository": {
     "type": "git",
@@ -25,31 +25,48 @@
   },
   "homepage": "https://github.com/JMwill/jmwill.github.io#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/polyfill": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^1.0.1",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "file-loader": "^2.0.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.5",
-    "prettier": "^1.19.1",
-    "rimraf": "^2.7.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "http-server": "^0.12.3",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.26.11"
   },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
+  "dependencies": {},
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2021
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "assets/**/*.{json,css,md}": [
+      "prettier --write"
+    ],
+    "src/**/*.{json,css,md}": [
+      "prettier --write"
+    ],
+    "src/**/*.js": [
+      "eslint --fix"
+    ]
   }
 }
