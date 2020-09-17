@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Main Page</title>
     <link rel="shortcut icon" type="image/x-icon" href="./assets/icon.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./assets/normalize.css">
-    <link rel="stylesheet" href="./assets/styles/index.css?v={{CSS_VERSION}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/normalize.css" />
+    <link rel="stylesheet" href="./assets/styles/index.css?v={{CSS_VERSION}}" />
     <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-</head>
-<body>
+  </head>
+  <body>
     <div class="full-screen main">
-        <div class="container">
-            <h1 class="main-title">Will's Github Website</h1>
-            <ul class="project-link-list">
-                <a class="project-link" href="https://jmwill.github.io/blog/"><li class="project-link-item">BLOG</li></a>
-                <a class="project-link" href="https://github.com/JMwill/wiki"><li class="project-link-item">WIKI</li></a>
-                <a class="project-link" href="https://jmwill.github.io/resume/"><li class="project-link-item">RESUME</li></a>
-            </ul>
-        </div>
-        <footer class="signature">
-            <p>"Doubt kills more dreams than failure ever will."</p>
-        </footer>
+      <div class="container">
+        <h1 class="main-title">Will's Github Website</h1>
+        <ul class="project-link-list">
+          <a class="project-link" href="https://jmwill.github.io/blog/"
+            ><li class="project-link-item">BLOG</li></a
+          >
+          <a class="project-link" href="https://github.com/JMwill/wiki"
+            ><li class="project-link-item">WIKI</li></a
+          >
+          <a class="project-link" href="https://jmwill.github.io/resume/"
+            ><li class="project-link-item">RESUME</li></a
+          >
+        </ul>
+        <div class="container-bg"></div>
+      </div>
+      <footer class="signature">
+        <p>"Doubt kills more dreams than failure ever will."</p>
+      </footer>
     </div>
-    <div class="full-screen full-colorful-bg"></div>
+    <div class="full-screen full-colorful-bg animation-bg-scale"></div>
     <script src="{{BUNDLE_PATH}}"></script>
-</body>
+  </body>
 </html>

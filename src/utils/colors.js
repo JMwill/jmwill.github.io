@@ -1,4 +1,4 @@
-export default [
+const colors = [
   "#DC9FB4",
   "#E16B8C",
   "#8E354A",
@@ -250,3 +250,8 @@ export default [
   "#080808",
   "#0C0C0C",
 ];
+export const getRandomColor = () => {
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  return randomColor;
+};
+export default colors;

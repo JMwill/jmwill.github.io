@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 /* mixin */
 .full-screen {
   position: absolute;
@@ -8,7 +12,8 @@
 
 /* global */
 :root {
-  --default-text-color: #fff;
+  --default-text-color: #ffffff;
+  --default-bg-color: #232525;
 }
 .main,
 .container,
@@ -26,13 +31,25 @@
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 400px;
   min-height: 40vh;
+  margin-top: -20vh;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.container-bg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: background-color 5s ease-in;
+  background-color: #ffffff;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .project-link-item {
@@ -40,15 +57,21 @@
   padding: 10px 30px;
   margin: 0 5px 5px;
   background-color: rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-link-item:hover {
+  box-shadow: inset 0 0 0 5px var(--default-bg-color);
 }
 
 .main-title {
   font-weight: normal;
+  transition: color 5s ease-in;
 }
 
 .project-link-list {
   padding-left: 0;
-  opacity: 0.2;
+  opacity: 0.4;
   transition: opacity 250ms ease-in;
 }
 
@@ -72,8 +95,20 @@
 }
 /* Plugin of full colorful background */
 .full-colorful-bg {
-  transition: background-color 1s ease-in;
-  background-color: #232525;
+  background-color: var(--default-bg-color);
   background-size: cover;
   background-image: url("https://source.unsplash.com/random/1920x1080");
+}
+
+@keyframes bg-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.animation-bg-scale {
+  animation: bg-scale 30s ease-in-out infinite alternate;
 }

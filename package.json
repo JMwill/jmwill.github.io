@@ -6,9 +6,11 @@
     "clean": "rimraf dist",
     "format": "prettier --write src",
     "rollup:watch": "rollup -w --config",
+    "script:start": "./scripts/start.sh",
     "start": "http-server",
     "prebuild": "npm run clean",
-    "build": "MY_BUILD_ENV=prod rollup --config"
+    "build": "MY_BUILD_ENV=prod rollup --config",
+    "postbuild": "./scripts/build.sh"
   },
   "repository": {
     "type": "git",

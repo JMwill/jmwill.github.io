@@ -68,3 +68,30 @@ export const randomInt = (min, max) => {
   }
   return Math.floor(Math.random() * (max - min)) + min;
 };
+
+export const lightOrDark = (color) => {
+  let c, r, g, b;
+  if (color.match(/^rgb/)) {
+    c = color.match(
+      /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/
+    );
+    if (c) {
+      r = c[1];
+      g = c[2];
+      b = c[3];
+    }
+  } else {
+    c = +("0x" + color.slice(1).replace(color.length < 5 && /./g, "$&$&"));
+    r = c >> 16;
+    g = (c >> 8) & 255;
+    b = c & 255;
+  }
+
+  const hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
+
+  if (hsp > 127.5) {
+    return "light";
+  } else {
+    return "dark";
+  }
+};

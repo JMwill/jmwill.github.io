@@ -1,3 +1,4 @@
+#!/bin/bash
 BUNDLE_PATH=$(find ./dist -name bundle.js)
 CSS_VERSION=$(md5sum assets/styles/index.css | head -c 8)
 HTML_CONTENT=$(cat src/index.html)
